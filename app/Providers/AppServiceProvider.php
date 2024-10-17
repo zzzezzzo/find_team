@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Observers\MemberObserver;
 use Illuminate\Support\ServiceProvider;
+use App\Models\Member;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Member::observe(MemberObserver::class);
     }
 }

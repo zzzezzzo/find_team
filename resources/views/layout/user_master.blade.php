@@ -14,14 +14,17 @@
     <title>@yield('title-page')</title>
 </head>
 
-<body>
-    <header style="display: flex ;justify-content:space-between; padding:5px;">
-        {{-- @include('layout.sidebar') --}}
-        @include('layout.nav')
+<body id="body" class="" >
+    <header >
+        @include('layout.sidebar')
+        {{-- @include('layout.nav') --}}
     </header>
 
-    <div class="page-content" style="width:75%; margin:auto;">
+    <div class="page-content" >
         @yield('content-page')
+    </div>
+    <div >
+        <button class=" open-site" id="dark-mode" style="position:fixed; bottom:0; right:0; margin:20px;" >dark</button>
     </div>
 
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
