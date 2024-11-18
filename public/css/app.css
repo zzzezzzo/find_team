@@ -206,9 +206,20 @@ a {
     color:#FFF!important;
 }
 #add_icon{
-    width: 50px;
+    width: 55px;
+    height: 55px;
+    color:#12192C;
     cursor:pointer;
     position: fixed;
     right: 20px;
-    top: 20px;
+    bottom: 20px;
+    padding:10px;
+    border:#12192C solid 2px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+#add_icon:hover{
+    background-color:#12192C;
+    color:#FFF;
 }

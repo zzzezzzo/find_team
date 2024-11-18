@@ -39,8 +39,7 @@ class HomeController extends Controller
         $me->team_id = ceil(($userCount + 1) / 3); 
         $me->user_id = Auth::user()->id;
         $me->save();
-        // desc : 
-                    // this part is response to uploud file or image
+        // desc : this part is response to uploud file or image
         $Ime = $req->file('image');
         $ext = $Ime->getClientOriginalExtension();
         $location = 'public/images/';
@@ -71,6 +70,7 @@ class HomeController extends Controller
         $Ime->move($location, $filename);
         $member->image = $filename;
         $member->save();
+        return redirect()->route('user.show');
     }
     public function destroy($id)
     {

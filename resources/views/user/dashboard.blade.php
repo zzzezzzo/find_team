@@ -3,7 +3,7 @@
 
 @section('content-page')
     {{-- the view about of team  --}}
-    {{--  this is the response to show the form to add your data --}} 
+    {{--  this is the response to show the form to add your data --}}
     <div style="display:flex; justify-content:space-around; flex-wrap: wrap; margin-top:50px">
 
         @foreach ($teams as $team)
@@ -11,7 +11,13 @@
                 <img src="{{ asset('team.webp') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $team->name }}</h5>
-                    <p class="card-text"><span class="text-primary">Created By</span> {{ Auth::user()->name }}</p>
+                    @foreach ($members as $member)
+                        @if ($member->user_id === $team->user_id)
+                            <p class="card-text"><span class="text-primary">Created By</span>
+                                {{ $member->name }}
+                            </p>
+                        @endif
+                    @endforeach
                     <a href="{{ route('user.show', $team->id) }}" class="btn btn-primary">show you</a>
                 </div>
             </div>
@@ -19,8 +25,8 @@
     </div>
     {{-- end teh view team --}}
     {{-- this is the response to show the form to add your data --}}
-    <img id="add_icon" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        data-bs-whatever="@mdo" src="{{ asset('icon/add-user.png') }}">
+    <i class="fa-solid fa-user-plus" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"
+        id="add_icon"></i>
     <!-- Button trigger modal -->
     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -48,7 +54,6 @@
                             <label for="message-text" class="col-form-label">skills</label>
                             <textarea class="form-control" required id="skills" name="skills"></textarea>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
