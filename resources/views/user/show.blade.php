@@ -12,8 +12,8 @@
                 <div class="card-body">
                     <img src="{{ asset('public/images/' . $member->image) }}" alt="User Image"
                         style="width: 150px; height: 150px; border-radius: 50%; margin-left:auto;">
-                    <h5 class="card-title">{{ $member->skills }}</h5>
-                    <p class="card-text">{{ $member->phone }}</p>
+                    <h5 class="card-title"><span class="text-danger">skills: </span>{{ $member->skills }}</h5>
+                    <p class="card-text"><span class="text-danger">phone: </span>{{ $member->phone }}</p>
                     @if (Auth::check() && Auth::user()->id === $member->user_id)
                         <a href="#"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" data-bs-whatever="@mdo">update</button></a>

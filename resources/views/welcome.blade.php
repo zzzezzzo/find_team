@@ -16,7 +16,7 @@
 <body id="wellcome_body">
     <div class="container text-center mt-5">
         <h1 class="display-2 res">Hello in the my web site </h1>
-        <p class="display-6 res">if you wont to injoue the team login in this web site</p>
+        <p class="display-6 res">if you wont to Join the team login in this web site</p>
         <div
             class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white logReg">
             @if (Route::has('login'))

@@ -2,6 +2,7 @@
 @section('title-page', 'home')
 
 @section('content-page')
+    <h1 class="text-center my-5 display-1 text-primary">Find My Team</h1>
     {{-- the view about of team  --}}
     {{--  this is the response to show the form to add your data --}}
     <div style="display:flex; justify-content:space-around; flex-wrap: wrap; margin-top:50px">
